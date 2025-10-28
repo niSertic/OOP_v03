@@ -16,16 +16,15 @@ int main()
 	results r(n);
 
 	std::string name;
-	unsigned grade;
-	unsigned i(0);
-	while (i < n) {
+	int grade;
 
+	for (unsigned i = 0; i < n; i++)
+	{
 		std::cout << "Enter " << i + 1 << ". student's name : ";
 		std::cin >> name;
 		std::cout << "Enter student grade: ";
 		std::cin >> grade;
-		r.add({ name, static_cast<int>(grade) });
-		i++;
+		r.add({ name, grade });
 	}
 
 	std::cout << "Enter grade to check: ";

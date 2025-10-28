@@ -22,8 +22,7 @@ namespace vsite::oop::v3
 	{
 		if (count < capacity)
 		{
-			students[count] = s;
-			++count;
+			students[count++] = s;
 		}
 	}
 	// has_grade function - counts how many students have the specified grade
@@ -43,9 +42,10 @@ namespace vsite::oop::v3
 	unsigned results::starts_with_letter(char letter) const
 	{
 		unsigned letter_count = 0;
+		letter = std::tolower(letter);
 		for (unsigned i = 0; i < count; ++i)
 		{
-			if (std::tolower(students[i].name[0]) == std::tolower(letter))
+			if (std::tolower(students[i].name[0]) == letter)
 			{
 				++letter_count;
 			}
